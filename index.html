@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSONPlaceholder Posts</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <header class="page-header">
+        <div>
+          <h1>JSONPlaceholder Posts</h1>
+          <p>Posts fetched from the <code>/posts</code> API using asynchronous JavaScript.</p>
+        </div>
+        <button id="refreshButton" class="primary-button" type="button">Refresh</button>
+      </header>
+
+      <section class="controls" aria-label="Post filters">
+        <label for="searchInput">
+          Search posts
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Enter a title or keyword"
+            autocomplete="off"
+          />
+        </label>
+
+        <label for="authorFilter">
+          Filter by author
+          <select id="authorFilter">
+            <option value="all">All authors</option>
+          </select>
+        </label>
+      </section>
+
+      <div class="list-summary">
+        <h2>Posts</h2>
+        <p id="resultCount" aria-live="polite">0 results</p>
+      </div>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+
+      <section id="postsRegion" aria-label="Post results" aria-busy="true">
+        <ol id="postList" class="post-list"></ol>
+      </section>
+
+      <section id="emptyState" class="empty-state" hidden>
+        <h2>No posts found</h2>
+        <p>Try changing your search or author filter.</p>
+        <button id="clearFiltersButton" class="secondary-button" type="button">
+          Clear filters
+        </button>
+      </section>
+
+      <nav id="pagination" class="pagination" aria-label="Post pages" hidden>
+        <button id="previousButton" type="button">Previous</button>
+        <p id="pageIndicator">Page 1 of 1</p>
+        <button id="nextButton" type="button">Next</button>
+      </nav>
+
+      <footer>
+        Data from
+        <a href="https://jsonplaceholder.typicode.com/posts" target="_blank" rel="noreferrer">
+          JSONPlaceholder /posts
+        </a>
+      </footer>
+    </main>
+  </body>
+</html>
